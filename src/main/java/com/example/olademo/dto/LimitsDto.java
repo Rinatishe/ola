@@ -4,6 +4,7 @@ public class LimitsDto {
     public String uid;
     public String typeOfOperationUid;
     public String accountsUid;
-    public String limits;
+    public Integer sum;
+    public String currency;
     public String date;
 }

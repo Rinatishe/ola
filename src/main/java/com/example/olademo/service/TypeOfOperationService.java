@@ -27,7 +27,6 @@ public class TypeOfOperationService {
             dto.uid = entry.getTypeOfOperationUid().toString();
             dto.operationName = entry.getOperationName();
             dto.peculiarities = entry.getPeculiarities();
-            dto.sum = entry.getSum();
             typeOfOperationDtos.add(dto);
         }
         return typeOfOperationDtos;

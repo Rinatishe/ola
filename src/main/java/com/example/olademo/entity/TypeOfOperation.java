@@ -29,7 +29,6 @@ public class TypeOfOperation {
     private Set<Limits> limits = new HashSet<Limits>();
 
     private String operationName;
-    private String sum;
     private String peculiarities;
 }
 

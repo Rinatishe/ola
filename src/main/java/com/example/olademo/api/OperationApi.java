@@ -3,9 +3,11 @@ package com.example.olademo.api;
 import com.example.olademo.dto.OperationDto;
 import com.example.olademo.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -13,11 +15,6 @@ import java.util.UUID;
 public class OperationApi {
     @Autowired
     private OperationService operationService;
-
-    @GetMapping("/operations")
-    public List<OperationDto> getAllOperation(){
-        return operationService.getAllOperations();
-    }
 
     @PostMapping("/create")
     public UUID create(@RequestBody OperationDto dto){

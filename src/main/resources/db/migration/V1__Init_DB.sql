@@ -3,7 +3,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 create table exchange_rates
 (
     uid uuid DEFAULT uuid_generate_v4 () primary key,
-    sum VARCHAR(255),
+    sum NUMERIC,
     date date
 );
 
@@ -21,8 +21,7 @@ CREATE TABLE type_of_operation
 (
     uid            uuid DEFAULT uuid_generate_v4 () PRIMARY KEY,
     operation_name VARCHAR(255)  not null,
-    peculiarities  VARCHAR(2048) not null,
-    sum            VARCHAR(255)
+    peculiarities  VARCHAR(2048) not null
 );
 
 create table accounts
@@ -42,10 +41,10 @@ CREATE TABLE operation
     type_of_operation_uid uuid
         constraint operation_type_of_operation_uid_fk
             references type_of_operation(uid),
-    accounts_uid uuid
+    account_uid uuid
         constraint operations_accounts_uid_fk
             references accounts(uid),
-    sum varchar (255) not null,
+    sum NUMERIC not null,
     currency varchar(255) not null,
     the_date date,
     limit_exceed boolean default false
@@ -55,12 +54,13 @@ CREATE TABLE operation
 create table limits
 (
     uid uuid DEFAULT uuid_generate_v4 () primary key,
-    accounts_uid uuid
+    account_uid uuid
         constraint limits_accounts_uid_fk
             references accounts(uid),
     type_of_operation_uid uuid
         constraint limits_type_of_operation_uid_fk
             references type_of_operation(uid),
-    limits varchar(255) not null,
+    sum NUMERIC not null default 0,
+    currency varchar(255) not null,
     date date
 );

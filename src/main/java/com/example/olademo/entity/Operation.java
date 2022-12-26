@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -17,10 +18,10 @@ public class Operation {
     @GeneratedValue(strategy = GenerationType.UUID)
     @UuidGenerator
     private UUID uid;
-    private String typeOfOperationUid;
-    private String accountsUid;
-    private String sum;
-    private String theDate;
-    private String limitExceed;
+    private UUID typeOfOperationUid;
+    private UUID accountsUid;
+    private Integer sum;
     private String currency;
+    private Date theDate;
+    private Boolean limitExceed;
 }

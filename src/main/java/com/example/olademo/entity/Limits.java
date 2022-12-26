@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -20,6 +18,7 @@ public class Limits {
     @GeneratedValue(strategy = GenerationType.UUID)
     @UuidGenerator
     private UUID uid;
-    private String limits;
+    private Integer sum;
+    private String currency;
     private String date;
 }

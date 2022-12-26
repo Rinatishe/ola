@@ -17,6 +17,6 @@ public class ExchangeRates {
     @GeneratedValue(strategy = GenerationType.UUID)
     @UuidGenerator
     private UUID uid;
-    private String sum;
+    private Integer sum;
     private String date;
 }
