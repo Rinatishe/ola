@@ -40,10 +40,11 @@ public class ExchangeRatesService {
             if(closeRate == null) throw new IllegalArgumentException("rate is null");
 
             ExchangeRates entry = new ExchangeRates();
-            entry.setSum(Integer.valueOf(closeRate));
+            entry.setSum(String.valueOf(closeRate));
             entry.setDate(new Date());
             exchangeRatesRepository.save(entry);
 
+//            System.out.println(closeRate);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

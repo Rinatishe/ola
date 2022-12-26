@@ -3,7 +3,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 create table exchange_rates
 (
     uid uuid DEFAULT uuid_generate_v4 () primary key,
-    sum NUMERIC,
+    sum VARCHAR ,
     date date
 );
 

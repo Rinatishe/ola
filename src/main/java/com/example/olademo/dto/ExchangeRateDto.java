@@ -4,6 +4,6 @@ import java.util.Date;
 
 public class ExchangeRateDto {
     public String uid;
-    public Integer sum;
+    public String sum;
     public Date date;
 }
