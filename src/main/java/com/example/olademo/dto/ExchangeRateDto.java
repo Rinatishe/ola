@@ -1,7 +1,9 @@
 package com.example.olademo.dto;
 
-public class ExchangeRatesDto {
+import java.util.Date;
+
+public class ExchangeRateDto {
     public String uid;
     public Integer sum;
-    public String date;
+    public Date date;
 }

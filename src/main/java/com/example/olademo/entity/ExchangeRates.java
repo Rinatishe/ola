@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -18,5 +19,5 @@ public class ExchangeRates {
     @UuidGenerator
     private UUID uid;
     private Integer sum;
-    private String date;
+    private Date date;
 }

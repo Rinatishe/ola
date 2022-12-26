@@ -1,6 +1,7 @@
 package com.example.olademo.service;
 
 import com.example.olademo.dto.OperationDto;
+import com.example.olademo.entity.Limits;
 import com.example.olademo.entity.Operation;
 import com.example.olademo.mapper.OperationMapper;
 import com.example.olademo.repository.OperationRepository;
@@ -16,21 +17,14 @@ public class OperationService {
     private OperationRepository operationRepository;
     @Autowired
     private OperationMapper operationMapper;
-
-
-//    public List<OperationDto> getAllOperations(){
-//        List<Operation> operationList = (List<Operation>) operationRepository.findAll();
-//
-//        List<OperationDto> operationDtos = new ArrayList<>();
-//        for (Operation entry: operationList) {
-//            OperationDto dto = operationMapper.mapEntry(entry);
-//            operationDtos.add(dto);
-//        }
-//        return operationDtos;
-//    }
+    @Autowired
+    private LimitsService limitsService;
 
     public UUID create(OperationDto dto){
         if(dto == null) return null;
+        Limits limit = limitsService.getOneByAccountAndTypeAndCurrency(dto.accountUid, dto.typeOfOperationUid, dto.currency);
+        if(limit == null) return null;
+        limit.getSum();
         Operation operation = operationMapper.mapDto(dto, new Operation());
         operation = operationRepository.save(operation);
         return operation.getUid();

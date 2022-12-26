@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface ExchangeRatesrRepository extends CrudRepository<ExchangeRates, UUID> {
+public interface ExchangeRatesRepository extends CrudRepository<ExchangeRates, UUID> {
 }
