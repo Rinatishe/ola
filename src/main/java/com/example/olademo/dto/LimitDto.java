@@ -1,10 +1,13 @@
 package com.example.olademo.dto;
 
-public class LimitsDto {
+import java.util.Date;
+
+public class LimitDto {
     public String uid;
-    public String typeOfOperationUid;
+    public String operationCategoryUid;
     public String accountsUid;
     public Integer sum;
+    public Integer remainder;
     public String currency;
-    public String date;
+    public Date date;
 }

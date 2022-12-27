@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -19,6 +20,7 @@ public class Limits {
     @UuidGenerator
     private UUID uid;
     private Integer sum;
+    private Integer remainder;
     private String currency;
-    private String date;
+    private Date date;
 }

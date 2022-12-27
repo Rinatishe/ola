@@ -11,11 +11,12 @@ public class OperationMapper {
 
     public Operation mapDto(OperationDto dto, Operation entry){
         if(dto == null || entry == null) return null;
-        entry.setTypeOfOperationUid(UUID.fromString(dto.typeOfOperationUid));
-        entry.setAccountsUid(UUID.fromString(dto.accountUid));
+        entry.setOperationCategoryUid(UUID.fromString(dto.operationCategoryUid));
+        entry.setAccountUid(UUID.fromString(dto.accountUid));
         entry.setSum(dto.sum);
+        entry.setLimitSum(dto.limitSum);
         entry.setCurrency(dto.currency);
-        entry.setTheDate(dto.theDate);
+        entry.setDate(dto.date);
         entry.setLimitExceed(dto.limitExceed);
         return entry;
     }
@@ -24,11 +25,12 @@ public class OperationMapper {
         if(entry == null) return null;
         OperationDto dto = new OperationDto();
         dto.uid = entry.getUid().toString();
-        dto.typeOfOperationUid = entry.getTypeOfOperationUid().toString();
-        dto.accountUid = entry.getAccountsUid().toString();
+        dto.operationCategoryUid = entry.getOperationCategoryUid().toString();
+        dto.accountUid = entry.getAccountUid().toString();
         dto.sum = entry.getSum();
+        dto.limitSum = entry.getLimitSum();
         dto.currency = entry.getCurrency();
-        dto.theDate = entry.getTheDate();
+        dto.date = entry.getDate();
         dto.limitExceed = entry.getLimitExceed();
         return dto;
     }

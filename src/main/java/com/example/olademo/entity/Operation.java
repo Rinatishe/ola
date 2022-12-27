@@ -18,10 +18,11 @@ public class Operation {
     @GeneratedValue(strategy = GenerationType.UUID)
     @UuidGenerator
     private UUID uid;
-    private UUID typeOfOperationUid;
-    private UUID accountsUid;
+    private UUID operationCategoryUid;
+    private UUID accountUid;
     private Integer sum;
+    private Integer limitSum;
     private String currency;
-    private Date theDate;
+    private Date date;
     private Boolean limitExceed;
 }

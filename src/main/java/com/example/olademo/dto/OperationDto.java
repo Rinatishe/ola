@@ -5,10 +5,11 @@ import java.util.UUID;
 
 public class OperationDto {
     public String uid;
-    public String typeOfOperationUid;
+    public String operationCategoryUid;
     public String accountUid;
     public Integer sum;
-    public Date theDate;
-    public Boolean limitExceed;
+    public Integer limitSum;
     public String currency;
+    public Date date;
+    public Boolean limitExceed;
 }
