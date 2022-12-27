@@ -5,6 +5,8 @@
 Username: postgres<br/>
 Password: developer
 
+####Сущности описаны в entities_sql.svg
+
 ##swagger по пути http://localhost:8080/swagger-ui/index.html#/
 Описывает 2 REST API
 1. Для приема транзакций http://localhost:8080/operation/create
